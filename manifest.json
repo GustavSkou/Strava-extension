@@ -20,6 +20,6 @@
   ],
   "action": {
     "default_popup": "popup.html",
-    "default_title": "Klik her"
+    "default_title": "Strava Content Block"
   }
 }
