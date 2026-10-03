@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Usernames Popup</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <div class="popup-container">
+    <!-- Header -->
+    <header class="header">
+      <div class="header-left">
+        <div class="app-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-3.92 7.94"></path>
+          </svg>
+        </div>
+        <h1 class="title">Usernames</h1>
+      </div>
+      <span class="badge" id="savedCount">0 saved</span>
+    </header>
+
+    <!-- Top Section (Fixed): Input form -->
+    <section class="add-section">
+      <label for="usernameInput" class="section-label">Add username</label>
+      <form id="addForm" class="search-input-wrapper">
+        <svg class="search-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+        <input
+          type="text"
+          id="usernameInput"
+          placeholder="alex.morgan"
+          autocomplete="off"
+          spellcheck="false"
+          aria-label="Username"
+          required
+        />
+        <button type="submit" id="addBtn" class="btn-primary">Add</button>
+      </form>
+    </section>
+
+    <!-- Section Header for List -->
+    <div class="list-header">
+      <span class="section-label">All usernames</span>
+      <span class="sort-label">A–Z</span>
+    </div>
+
+    <!-- Scrollable Middle Section: Usernames List -->
+    <main class="list-container" id="listContainer" role="region" aria-label="Added usernames list">
+      <ul class="user-list" id="userList">
+        <!-- Rendered dynamically -->
+      </ul>
+    </main>
+
+    <!-- Bottom Section (Fixed): Toggles -->
+    <footer class="footer">
+      <div class="footer-title">Hide on profile</div>
+
+      <div class="toggle-row">
+        <label for="hidePicture" class="toggle-label">Picture</label>
+        <label class="switch">
+          <input type="checkbox" id="hidePicture" />
+          <span class="slider"></span>
+        </label>
+      </div>
+
+      <div class="toggle-row">
+        <label for="hideDescription" class="toggle-label">Description</label>
+        <label class="switch">
+          <input type="checkbox" id="hideDescription" />
+          <span class="slider"></span>
+        </label>
+      </div>
+
+      <div class="toggle-row">
+        <label for="hideName" class="toggle-label">Name</label>
+        <label class="switch">
+          <input type="checkbox" id="hideName" />
+          <span class="slider"></span>
+        </label>
+      </div>
+    </footer>
+  </div>
+
+  <script src="persistenceService.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

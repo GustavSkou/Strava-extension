@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "Strava content mod",
+  "version": "1.0",
+  "description": "",
+  "permissions": ["storage"],
+  "host_permissions": [
+    "https://strava.com/*",
+    "https://www.strava.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://strava.com/*",
+        "https://www.strava.com/*"
+      ],
+      "js": ["persistenceService.js", "pageEditor.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Klik her"
+  }
+}
