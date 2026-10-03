@@ -3,6 +3,12 @@
   "name": "Strava content mod",
   "version": "1.0",
   "description": "",
+  "default_icon": {
+    "16": "logo.png",
+    "32": "logo.png",
+    "48": "logo.png",
+    "128": "logo.png"
+  },
   "permissions": ["storage"],
   "host_permissions": [
     "https://strava.com/*",
@@ -20,6 +26,12 @@
   ],
   "action": {
     "default_popup": "popup.html",
-    "default_title": "Strava Content Block"
+    "default_title": "Strava Content Block",
+    "default_icon": {
+      "16": "logo.png",
+      "32": "logo.png",
+      "48": "logo.png",
+      "128": "logo.png"
+    }
   }
 }
