@@ -10,6 +10,22 @@
 
     entries.forEach((entry) => {
       const owner = entry.querySelector('[data-testid="owners-name"]');
+
+      const tag = entry.querySelector('[data-testid="tag"]')
+      const type = entry.querySelector('[data-testid="activity-icon"] title');
+
+      if (settings.hideEct){
+        if (tag != null && tag.textContent != null && tag.textContent.trim().toLowerCase() == "pendling") {
+          entry.style.setProperty("display", "none", "important");
+          return;
+        }
+
+        if(type!=null && type.textContent.trim().toLowerCase() == 'gåtur' || type!=null && type.textContent.trim().toLowerCase() == 'walk') {
+          entry.style.setProperty("display", "none", "important");
+          return;
+        }
+      }
+      
       if (!owner) 
         return;
 
@@ -38,6 +54,7 @@
  *  hidePicture: false,
     hideDescription: false,
     hideName: false,
+    hideEct: false,
  */
 
   const blockedAthletes = await service.loadUsers();

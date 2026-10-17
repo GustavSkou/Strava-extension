@@ -12,12 +12,14 @@ document.addEventListener("DOMContentLoaded", async () => {
     hidePicture: document.getElementById("hidePicture"),
     hideDescription: document.getElementById("hideDescription"),
     hideName: document.getElementById("hideName"),
+    hideEct: document.getElementById("hideEct"),
   };
 
   let settings = {
     hidePicture: false,
     hideDescription: false,
     hideName: false,
+    hideEct: false,
   };
 
   async function saveState() {
